@@ -1,8 +1,8 @@
 <template>
     <div class="ml-5 mr-5">
         <TheHeader />
-        <NuxtPage />
-      
+        <Nuxt />
+
     </div>
 </template>
 

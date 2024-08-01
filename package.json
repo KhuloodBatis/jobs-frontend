@@ -10,21 +10,24 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@nuxtjs/auth": "^4.9.1",
+    "@nuxtjs/axios": "^5.13.6",
+    "autoprefixer": "^9.8.8",
+    "axios": "^0.21.4",
     "bootstrap": "^5.3.3",
     "consola": "^3.2.3",
     "core-js": "^3.25.3",
     "cross-env": "^7.0.3",
+    "defu": "^6.1.4",
     "last": "^1.1.0",
-    "nuxt": "^3.12.4",
+    "postcss": "^7.0.39",
     "ufo": "^1.5.4",
-    "vue": "^3.4.34",
-    "vue-server-renderer": "^2.2.6",
-    "vue-template-compiler": "^0.1.0"
+    "vue": "^2.7.16",
+    "vue-server-renderer": "^2.7.16",
+    "vue-template-compiler": "^2.7.16"
   },
   "devDependencies": {
-    "@nuxtjs/tailwindcss": "^5.3.3",
-    "autoprefixer": "^10.4.19",
-    "postcss": "^8.4.40",
-    "tailwindcss": "^3.4.7"
+    "nuxt": "^2.18.1",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
 }

@@ -1,3 +1,4 @@
+
 export default {
    compatibilityDate: '2024-07-29',
   // Global page headers: https://go.nuxtjs.dev/config-head
@@ -18,8 +19,14 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [
+  buildModules: [
+    '@nuxtjs/tailwindcss',
   ],
+  css:['@/assets/css/main.css'],
+
+  tailwindcss: {
+    cssPath: '~/assets/css/main.css',
+  },
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -27,7 +34,7 @@ export default {
 
 
     devtools: { enabled: true },
-    css: ['~/assets/css/main.css'],
+
     postcss: {
       plugins: {
         tailwindcss: {},
@@ -42,13 +49,35 @@ export default {
   // Modules for dev and build (recommended): https://go.nuxtjs.dev/config-modules
   buildModules: [
     // https://go.nuxtjs.dev/tailwindcss
-    '@nuxtjs/tailwindcss',
+    // '@nuxtjs/tailwindcss',
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+    '@nuxtjs/axios',
+    '@nuxtjs/auth',
   ],
 
+
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/api/login', method: 'post', propertyName: false },
+          logout: { url: '/api/logout', method: 'post' },
+          user: { url: '/api/user', method: 'get', propertyName: false }
+        },
+        tokenRequired: false,
+        tokenType: false,
+      }
+    },
+    localStorage : false,
+  },
+
+  axios: {
+    baseURL: 'http://jobs.test', // Replace with your API base URL
+    credentials: true,
+  },
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
   }
